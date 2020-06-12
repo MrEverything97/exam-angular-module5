@@ -1,0 +1,17 @@
+<h2>List Book</h2>
+<a [routerLink]="['/book-add']">Add new book</a>
+<ul>
+  <li *ngFor="let book of bookList; index as i">
+    <h3>
+      <a [routerLink]="['/', book.id]">
+       STT: {{book.id}} - Tên sách : {{book.title}} - Tác giả : {{book.author}}
+      </a>
+    </h3>
+
+    <a [routerLink]="['/book-update', book.id]">Edit</a>
+
+    <a [routerLink]="['/book', book.id]">Details</a>
+
+    <button (click)="deleteBook(i)">Delete</button>
+  </li>
+</ul>
